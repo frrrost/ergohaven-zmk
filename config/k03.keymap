@@ -158,11 +158,11 @@
             display-name = "Base";
             sensor-bindings =
                 <&enc_no_behavior>,
-                <&enc_hscroll>,
-                <&enc_vol>,
-                <&enc_vscroll>,
                 <&enc_no_behavior>,
-                <&enc_no_behavior>;
+                <&enc_vol>,
+                <&enc_no_behavior>,
+                <&enc_no_behavior>,
+                <&enc_vscroll>;
 
             //  unused
         };
@@ -179,11 +179,11 @@
             display-name = "Navigation";
             sensor-bindings =
                 <&enc_no_behavior>,
-                <&enc_vscroll>,
+                <&enc_no_behavior>,
                 <&enc_prev_next>,
                 <&enc_hscroll>,
                 <&enc_no_behavior>,
-                <&enc_no_behavior>;
+                <&enc_hscroll>;
 
             //  unused
         };
