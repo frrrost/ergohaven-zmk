@@ -162,7 +162,7 @@
                 <&enc_vol>,
                 <&enc_vscroll>,
                 <&enc_no_behavior>,
-                <&enc_no_behavior>;
+                <&enc_vscroll>;
 
             //  unused
         };
