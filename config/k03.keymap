@@ -118,7 +118,7 @@
             label = "ENC_HSCROLL_N";
             #sensor-binding-cells = <0>;
             tap-ms = <150>;
-            bindings = <&msc MOVE_X(20)>, <&msc MOVE_X(-20)>;
+            bindings = <&msc MOVE_X(40)>, <&msc MOVE_X(-40)>;
         };
     };
 
