@@ -12,7 +12,6 @@
 / {
     behaviors {
         // Encoder #1 → Volume
-
         enc_vol: enc_vol {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENC_VOL";
@@ -21,32 +20,11 @@
         };
 
         // Encoder #2 → Alt+Tab (default layer)
-
         enc_rotate_tab: enc_rotate_tab {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENC_ROTATE_TAB";
             #sensor-binding-cells = <0>;
             bindings = <&kp TAB>, <&kp LS(TAB)>;
-        };
-
-        // Encoder #2 → Vertical scroll (nav layer)
-
-        enc_vscroll: enc_vscroll {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENC_VSCROLL";
-            #sensor-binding-cells = <0>;
-            tap-ms = <140>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-        };
-
-        // Encoder #3 → Horizontal scroll
-
-        enc_hscroll: enc_hscroll {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENC_HSCROLL";
-            #sensor-binding-cells = <0>;
-            tap-ms = <150>;
-            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
         };
 
         enc_no_behavior: enc_no_behavior {
@@ -104,12 +82,20 @@
             bindings = <&kp F14>, <&kp F15>;
         };
 
-        enc_vscroll_N: enc_vscroll_N {
+        enc_vscroll_fast: enc_vscroll_fast {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENC_VSCROLL_N";
             #sensor-binding-cells = <0>;
             tap-ms = <150>;
-            bindings = <&msc MOVE_Y(30)>, <&msc MOVE_Y(-30)>;
+            bindings = <&msc MOVE_Y(40)>, <&msc MOVE_Y(-40)>;
+        };
+
+        enc_vscroll_slow: enc_vscroll_slow {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENC_VSCROLL_N";
+            #sensor-binding-cells = <0>;
+            tap-ms = <150>;
+            bindings = <&msc MOVE_Y(20)>, <&msc MOVE_Y(-20)>;
         };
 
         enc_hscroll_N: enc_hscroll_N {
@@ -119,6 +105,9 @@
             tap-ms = <150>;
             bindings = <&msc MOVE_X(40)>, <&msc MOVE_X(-40)>;
         };
+
+
+
     };
 
     macros {
@@ -177,7 +166,7 @@
                 <&enc_vol>,
                 <&enc_no_behavior>,
                 <&enc_no_behavior>,
-                <&enc_vscroll_N>;
+                <&enc_vscroll_fast>;
 
             //  unused
         };
@@ -219,7 +208,7 @@
                 <&enc_prev_next>,
                 <&cycle_audio_out>,
                 <&enc_no_behavior>,
-                <&enc_hscroll_N>;
+                <&enc_vscroll_slow>;
 
             //  unused
         };
