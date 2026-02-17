@@ -184,11 +184,11 @@
 
         nav {
             bindings = <
-&kp C_PLAY_PAUSE  &kp F2           &kp F3        &kp F4    &kp F5         &kp F6                                 &kp F7     &kp F8        &kp F9        &kp F10       &kp F11  &kp RC(F4)
-&kp F1            &none            &kp HOME      &kp UP    &kp END        &kp INS                                &kp PG_UP  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp F12  &kp BACKSPACE
-&msc SCRL_LEFT    &msc SCRL_RIGHT  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                                &kp PG_DN  &kp NUMBER_4  &kp NUMBER_5  &kp N6        &none    &none
-&trans            &kp F14          &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &kp K_APP    &kp PRINTSCREEN  &kp N0     &kp N1        &kp NUMBER_2  &kp NUMBER_3  &none    &none
-                                   &trans        &trans    &trans         &trans   &trans       &trans           &mo 3      &trans        &kp DOT       &kp COMMA
+&kp C_PLAY_PAUSE  &kp F1   &kp F2        &kp F3    &kp F4         &kp F5                                 &kp F6     &kp F7        &kp F8        &kp F9        &kp F10  &kp RC(F4)
+&kp HOME          &none    &kp HOME      &kp UP    &kp END        &kp INS                                &kp PG_UP  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none    &kp BACKSPACE
+&kp END           &none    &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                                &kp PG_DN  &kp NUMBER_4  &kp NUMBER_5  &kp N6        &none    &kp LC(LS(F12))
+&trans            &kp F14  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &kp K_APP    &kp PRINTSCREEN  &kp N0     &kp N1        &kp NUMBER_2  &kp NUMBER_3  &kp F11  &kp F12
+                           &trans        &trans    &trans         &trans   &trans       &trans           &mo 3      &trans        &kp DOT       &kp COMMA
             >;
 
             display-name = "Navigation";
@@ -196,7 +196,7 @@
                 <&enc_no_behavior>,
                 <&enc_no_behavior>,
                 <&enc_prev_next>,
-                <&enc_hscroll>,
+                <&enc_rotate_tab>,
                 <&enc_no_behavior>,
                 <&enc_hscroll_N>;
 
@@ -227,7 +227,7 @@
         adj {
             bindings = <
 &bootloader  &trans  &none           &none           &none            &trans                       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR_ALL
-&trans       &none   &none           &mmv MOVE_UP    &none            &none                        &trans        &trans        &trans            &trans        &trans        &studio_unlock
+&bootloader  &none   &none           &mmv MOVE_UP    &none            &none                        &trans        &trans        &trans            &trans        &bootloader   &studio_unlock
 &trans       &none   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none                        &out OUT_BLE  &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP  &kp F14       &kp F15
 &trans       &none   &none           &none           &none            &none   &mkp LCLK    &trans  &out OUT_USB  &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT    &trans        &trans
                      &trans          &trans          &trans           &trans  &trans       &trans  &trans        &trans        &trans            &trans
