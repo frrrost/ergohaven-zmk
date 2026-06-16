@@ -12,6 +12,7 @@
 / {
     behaviors {
         // Encoder #1 → Volume
+
         enc_vol: enc_vol {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENC_VOL";
@@ -20,6 +21,7 @@
         };
 
         // Encoder #2 → Alt+Tab (default layer)
+
         enc_rotate_tab: enc_rotate_tab {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENC_ROTATE_TAB";
@@ -106,8 +108,12 @@
             bindings = <&msc MOVE_X(40)>, <&msc MOVE_X(-40)>;
         };
 
-
-
+        rotate_swtch_audio: rotate_swtch_audio {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ROTATE_SWTCH_AUDIO";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp F18>, <&kp F19>;
+        };
     };
 
     macros {
@@ -185,7 +191,7 @@
                 <&enc_no_behavior>,
                 <&enc_no_behavior>,
                 <&enc_prev_next>,
-                <&enc_rotate_tab>,
+                <&rotate_swtch_audio>,
                 <&enc_no_behavior>,
                 <&enc_hscroll_N>;
 
